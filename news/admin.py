@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import News, Author, Category
+
+admin.site.register(News)
+admin.site.register(Author)
+admin.site.register(Category)

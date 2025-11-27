@@ -25,18 +25,3 @@ urlpatterns = [
 
 
 
-'''
-News table:
-title - название
-short_dect - короткое описание
-text - основной текст
-author - 1 к N
-date - дата
-category - 1 к N
-
-Author table:
-name - Имя
-
-Category table:
-name - название
-'''
