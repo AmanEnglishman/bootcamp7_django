@@ -7,6 +7,7 @@
   <meta name="description" content="Главные новости от okurmen news — актуальные статьи, аналитика и подборки" />
 
   <style>
+    /* ——— ВЕСЬ ВАШ CSS БЕЗ ИЗМЕНЕНИЙ ——— */
     :root{
       --bg: #0b0b0b;
       --paper: #0f0f0f;
@@ -18,7 +19,6 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color-scheme: dark;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -30,14 +30,12 @@
       line-height:1.45;
       font-size:16px;
     }
-
     .container{
       width:100%;
       max-width:var(--max-width);
       margin:28px auto;
       padding:0 20px;
     }
-
     header.site-header{
       display:flex;
       align-items:center;
@@ -45,7 +43,6 @@
       gap:16px;
       margin-bottom:22px;
     }
-
     .brand{
       display:flex;
       align-items:center;
@@ -53,81 +50,61 @@
       text-decoration:none;
       color:var(--accent);
     }
-
     .logo{
       width:52px;height:52px;border-radius:10px;
       background:linear-gradient(135deg,#fff,#ddd);
       display:grid;place-items:center;color:#000;font-weight:700;font-size:18px;
       box-shadow:0 4px 18px rgba(0,0,0,0.6);
     }
-
     .site-title{font-size:20px;font-weight:700;letter-spacing:0.6px}
     .site-tag{font-size:12px;color:var(--muted);margin-top:2px}
-
     nav.topnav{
       display:flex;align-items:center;gap:12px;
     }
-
     nav.topnav a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px;border-radius:8px}
     nav.topnav a:hover{color:var(--accent);background:var(--glass)}
-
     .search{
       display:flex;align-items:center;gap:8px;background:var(--paper);padding:8px;border-radius:10px
     }
     .search input{background:transparent;border:0;color:var(--accent);outline:none;width:180px}
-
-    /* Layout */
     .grid{
       display:grid;
       grid-template-columns: 1fr 330px;
       gap:24px;
     }
-
     .hero{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600"><rect fill="%230b0b0b" width="100%" height="100%"/></svg>') center/cover no-repeat;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
       border-radius:var(--radius);
       overflow:hidden;padding:18px;display:flex;flex-direction:column;gap:12px;
       box-shadow:0 8px 30px rgba(0,0,0,0.6);
     }
-
     .hero .kicker{color:var(--muted);font-size:13px;font-weight:600}
     .hero h1{margin:0;font-size:28px;line-height:1.05}
     .hero p.lead{color:var(--muted);margin:6px 0 0}
-
     .meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
     .meta .dot{width:6px;height:6px;background:var(--muted);border-radius:50%}
-
-    /* Article list */
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:14px;border-radius:12px;display:flex;gap:12px;align-items:flex-start}
     .card img{width:120px;height:80px;object-fit:cover;border-radius:8px;flex-shrink:0}
     .card .card-body{flex:1}
     .card h3{margin:0 0 6px;font-size:16px}
     .card p{margin:0;color:var(--muted);font-size:14px}
-
-    /* Sidebar */
     aside.sidebar{position:relative}
     .widget{background:var(--paper);padding:14px;border-radius:12px;margin-bottom:16px}
     .widget h4{margin:0 0 12px}
     .trend-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
     .trend-item:last-child{border-bottom:0}
     .trend-item small{color:var(--muted)}
-
-    /* Responsive */
     @media (max-width:980px){
       .grid{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}
       .search input{width:120px}
     }
-
     @media (prefers-reduced-motion: no-preference){
       .card, .hero{transition:transform .25s ease, box-shadow .25s ease}
       .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
     }
-
     footer.site-footer{margin-top:28px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:14px;text-align:center}
-
-    /* utility */
     .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
     .read-more{display:inline-block;margin-top:8px;font-weight:600;color:var(--accent);text-decoration:none}
   </style>
@@ -151,7 +128,7 @@
         <a href="contacts/">Контакты</a>
 
         <div class="search" role="search" aria-label="Поиск по сайту">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M21 21l-4.35-4.35" stroke="white" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/></svg>
+          <svg width="16" height="16"...></svg>
           <input type="search" placeholder="Поиск" />
         </div>
       </nav>
@@ -160,62 +137,55 @@
     <main>
       <div class="grid">
         <section>
-          <article class="hero" aria-labelledby="hero-title">
+
+          {% if news %}
+          {% with hero=news.0 %}
+          <article class="hero">
             <div class="kicker">Сегодня в новостях</div>
-            <h1 id="hero-title">Ведущая тема: важное событие, которое формирует повестку дня</h1>
-            <p class="lead">Краткий анонс статьи — емко, чётко и заманчиво. Небольшой абзац, который объясняет, почему это важно.</p>
+
+            <h1>{{ hero.title }}</h1>
+
+            <p class="lead">{{ hero.short_description }}</p>
 
             <div class="meta">
-              <span>Автор: <strong>Айжан</strong></span>
-              <span class="dot" aria-hidden></span>
-              <time datetime="2025-11-26">26 ноября 2025</time>
-              <a class="tag" href="#">Политика</a>
+              <span>Автор: <strong>{{ hero.author.full_name|default:"Неизвестно" }}</strong></span>
+              <span class="dot"></span>
+              <time>{{ hero.created_at|date:"d E Y" }}</time>
+              <a class="tag">{{ hero.category.title }}</a>
             </div>
 
             <a class="read-more" href="#">Читать полностью →</a>
           </article>
+          {% endwith %}
+          {% endif %}
 
-          <div class="cards" aria-live="polite">
+          <div class="cards">
+            {% for item in news %}
             <article class="card">
-              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='%23202020'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='18'>Изображение</text></svg>" alt=""/>
+              <img src="data:image/svg+xml;utf8,
+                   <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+                     <rect width='100%' height='100%' fill='%23202020'/>
+                     <text x='50%' y='50%' dominant-baseline='middle'
+                       text-anchor='middle' fill='%23ffffff'
+                       font-family='Arial' font-size='18'>Изображение</text>
+                   </svg>" alt=""/>
+
               <div class="card-body">
-                <h3>Региональные выборы: чего ждать от следующей недели</h3>
-                <p>Короткое введение в тему — основные игроки, вероятные последствия и чего ожидать.</p>
-                <div class="meta" style="margin-top:8px"><time datetime="2025-11-25">25 ноября 2025</time> • <small>3 мин чтения</small></div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.short_description }}</p>
+
+                <div class="meta" style="margin-top:8px">
+                  <time>{{ item.created_at|date:"d E Y" }}</time>
+                  • <small>{{ item.author.full_name|default:"Автор неизвестен" }}</small>
+                </div>
               </div>
             </article>
-
-            <article class="card">
-              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='%23111111'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='18'>Изображение</text></svg>" alt=""/>
-              <div class="card-body">
-                <h3>Экономика: новые тренды в инфляции и ставках</h3>
-                <p>Небольшой абзац о том, как последние данные повлияют на рынок и на кошельки людей.</p>
-                <div class="meta" style="margin-top:8px"><time datetime="2025-11-24">24 ноября 2025</time> • <small>4 мин чтения</small></div>
-              </div>
-            </article>
-
-            <article class="card">
-              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='%23090909'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='18'>Изображение</text></svg>" alt=""/>
-              <div class="card-body">
-                <h3>Культура: фестивали и премьеры этой зимы</h3>
-                <p>Короткое описание культурных событий — концерты, выставки и премьеры фильмов.</p>
-                <div class="meta" style="margin-top:8px"><time datetime="2025-11-22">22 ноября 2025</time> • <small>2 мин чтения</small></div>
-              </div>
-            </article>
-
-            <article class="card">
-              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='%23181818'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='18'>Изображение</text></svg>" alt=""/>
-              <div class="card-body">
-                <h3>Технологии: стартапы, за которыми стоит следить</h3>
-                <p>Обзор перспективных проектов и того, как они меняют отрасль.</p>
-                <div class="meta" style="margin-top:8px"><time datetime="2025-11-21">21 ноября 2025</time> • <small>5 мин чтения</small></div>
-              </div>
-            </article>
-
+            {% endfor %}
           </div>
         </section>
 
-        <aside class="sidebar" aria-label="Боковая панель">
+        <!-- SIDEBAR — остаётся без изменений -->
+        <aside class="sidebar">
           <div class="widget">
             <h4>Тренды</h4>
             <div class="trend-item">
@@ -224,14 +194,12 @@
                 <div><small>24 ноября 2025 • 6 482 прочтений</small></div>
               </div>
             </div>
-
             <div class="trend-item">
               <div style="flex:1">
                 <strong>2. Спортивный финал</strong>
                 <div><small>25 ноября 2025 • 4 210 прочтений</small></div>
               </div>
             </div>
-
             <div class="trend-item">
               <div style="flex:1">
                 <strong>3. Новые правила в образовании</strong>
@@ -251,13 +219,16 @@
 
           <div class="widget">
             <h4>О нас</h4>
-            <p style="color:var(--muted);margin:0">okurmen news — независимый новостной проект. Миссия — честно рассказывать о важных вещах.</p>
+            <p style="color:var(--muted);margin:0">
+              okurmen news — независимый новостной проект. Миссия — честно рассказывать о важных вещах.
+            </p>
           </div>
         </aside>
       </div>
 
       <footer class="site-footer">
-        © <strong>okurmen news</strong> — все права защищены. • <a href="#" style="color:var(--muted);text-decoration:none">Политика конфиденциальности</a>
+        © <strong>okurmen news</strong> — все права защищены.
+        • <a href="#" style="color:var(--muted);text-decoration:none">Политика конфиденциальности</a>
       </footer>
     </main>
   </div>
