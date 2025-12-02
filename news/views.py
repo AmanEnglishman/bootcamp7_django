@@ -1,9 +1,24 @@
 from django.shortcuts import render
+from django.db.models import Q
+
 from .models import News
 
 def home(request):
-    news = News.objects.all()
-    return render(request, 'index.html', context={'news': news})
+    query = request.GET.get('q')
+
+    if query:
+        news = News.objects.filter(
+            Q(title__icontains=query) |
+            Q(short_description__icontains=query)
+        ).order_by('-created_at')
+    else:
+        news = News.objects.all().order_by('-created_at')
+
+    return render(request, 'index.html', {'news': news, 'query': query})
+
+'''
+http://127.0.0.1:8000/?q=
+'''
 
 def contacts(request):
     return render(request, 'contacts.html')
