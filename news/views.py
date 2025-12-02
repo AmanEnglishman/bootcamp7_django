@@ -7,3 +7,7 @@ def home(request):
 
 def contacts(request):
     return render(request, 'contacts.html')
+
+def news_detail(request, pk):
+    news = News.objects.get(pk=pk)
+    return render(request, 'news_detail.html', context={'news': news})
