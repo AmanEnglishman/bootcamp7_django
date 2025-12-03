@@ -41,7 +41,7 @@ def contacts(request):
                 subject="Новое сообщение с сайта",
                 message=full_message,
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=["your_email@gmail.com"],
+                recipient_list=[settings.EMAIL_HOST_USER],
                 fail_silently=False,
             )
 

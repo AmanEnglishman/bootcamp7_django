@@ -69,7 +69,7 @@
 <body>
   <div class="container">
     <header class="site-header">
-      <a class="brand" href="index.html">
+      <a class="brand" href="{% url 'home' %}">
         <div class="logo">OK</div>
         <div>
           <div style="font-weight:700">okurmen news</div>
@@ -82,7 +82,7 @@
         <a href="#">Политика</a>
         <a href="#">Экономика</a>
         <a href="#">Культура</a>
-        <a href="contacts.html" style="color:var(--accent);background:var(--glass)">Контакты</a>
+        <a href="{% url 'contacts' %}" style="color:var(--accent);background:var(--glass)">Контакты</a>
       </nav>
     </header>
 
@@ -104,17 +104,23 @@
 
         <div class="info-row">
           <strong>Телефон</strong>
-          <span>+996 (500) 123‑456</span>
+          <span>+996 (500) 123-456</span>
         </div>
       </section>
 
       <section class="card">
         <h2 style="margin-top:0">Написать нам</h2>
-        <form onsubmit="event.preventDefault();alert('Спасибо! Ваше сообщение отправлено (демо).')">
-          <input type="text" placeholder="Ваше имя" required />
-          <input type="email" placeholder="Ваш email" required />
-          <textarea placeholder="Сообщение" required></textarea>
-          <button>Отправить</button>
+
+        {% if sent %}
+          <p style="color: lightgreen; margin-bottom: 15px;">
+            Ваше сообщение успешно отправлено!
+          </p>
+        {% endif %}
+
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Отправить</button>
         </form>
       </section>
 
