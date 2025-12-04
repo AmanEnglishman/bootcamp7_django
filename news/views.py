@@ -3,21 +3,33 @@ from django.db.models import Q
 from django.core.mail import send_mail
 from django.conf import settings
 
-from .models import News
+from .models import News, Category
 from .forms import ContactForm
 
 def home(request):
     query = request.GET.get('q')
+    category_id = request.GET.get('category')
+
+    news = News.objects.all().order_by('-created_at')
 
     if query:
-        news = News.objects.filter(
+        news = news.filter(
             Q(title__icontains=query) |
             Q(short_description__icontains=query)
-        ).order_by('-created_at')
-    else:
-        news = News.objects.all().order_by('-created_at')
+        )
 
-    return render(request, 'index.html', {'news': news, 'query': query})
+    if category_id:
+        news = news.filter(category_id=category_id)
+
+    categories = Category.objects.all()
+
+    return render(request, 'index.html', {
+        'news': news,
+        'query': query,
+        'categories': categories,
+        'active_category': int(category_id) if category_id else None
+    })
+
 
 
 
