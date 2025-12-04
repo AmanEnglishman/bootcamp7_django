@@ -38,10 +38,10 @@ def contacts(request):
                     {message}
                     """
             send_mail(
-                subject="Новое сообщение с сайта",
+                subject="От okurmen news",
                 message=full_message,
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[settings.EMAIL_HOST_USER],
+                recipient_list=[settings.EMAIL_HOST_USER,],
                 fail_silently=False,
             )
 
