@@ -1,251 +1,262 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>okurmen news — Главная</title>
-  <meta name="description" content="Главные новости от okurmen news — актуальные статьи, аналитика и подборки" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>okurmen news — Главная</title>
+    <meta name="description" content="Главные новости от okurmen news — актуальные статьи, аналитика и подборки"/>
 
-  <style>
-    :root{
-      --bg: #0b0b0b;
-      --paper: #0f0f0f;
-      --muted: #a8a8a8;
-      --accent: #ffffff;
-      --glass: rgba(255,255,255,0.04);
-      --radius: 12px;
-      --max-width: 1200px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#050505);
-      color:var(--accent);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      font-size:16px;
-    }
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      margin:28px auto;
-      padding:0 20px;
-    }
-    header.site-header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:22px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:var(--accent);
-    }
-    .logo{
-      width:52px;height:52px;border-radius:10px;
-      background:linear-gradient(135deg,#fff,#ddd);
-      display:grid;place-items:center;color:#000;font-weight:700;font-size:18px;
-      box-shadow:0 4px 18px rgba(0,0,0,0.6);
-    }
-    .site-title{font-size:20px;font-weight:700;letter-spacing:0.6px}
-    .site-tag{font-size:12px;color:var(--muted);margin-top:2px}
-    nav.topnav{
-      display:flex;align-items:center;gap:12px;
-    }
-    nav.topnav a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px;border-radius:8px}
-    nav.topnav a:hover{color:var(--accent);background:var(--glass)}
-    .search{
-      display:flex;align-items:center;gap:8px;background:var(--paper);padding:8px;border-radius:10px
-    }
-    .search input{background:transparent;border:0;color:var(--accent);outline:none;width:180px}
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 330px;
-      gap:24px;
-    }
-    .hero{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius:var(--radius);
-      overflow:hidden;padding:18px;display:flex;flex-direction:column;gap:12px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.6);
-    }
-    .hero .kicker{color:var(--muted);font-size:13px;font-weight:600}
-    .hero h1{margin:0;font-size:28px;line-height:1.05}
-    .hero p.lead{color:var(--muted);margin:6px 0 0}
-    .meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
-    .meta .dot{width:6px;height:6px;background:var(--muted);border-radius:50%}
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-      padding:14px;border-radius:12px;display:flex;
-      gap:12px;align-items:flex-start;
-      text-decoration:none;color:inherit;
-    }
-    .card img{width:120px;height:80px;object-fit:cover;border-radius:8px;flex-shrink:0}
-    .card .card-body{flex:1}
-    .card h3{margin:0 0 6px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    aside.sidebar{position:relative}
-    .widget{background:var(--paper);padding:14px;border-radius:12px;margin-bottom:16px}
-    .widget h4{margin:0 0 12px}
-    .trend-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
-    .trend-item:last-child{border-bottom:0}
-    .trend-item small{color:var(--muted)}
-    @media (max-width:980px){
-      .grid{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      .search input{width:120px}
-    }
-    @media (prefers-reduced-motion: no-preference){
-      .card, .hero{transition:transform .25s ease, box-shadow .25s ease}
-      .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
-    }
-    footer.site-footer{margin-top:28px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:14px;text-align:center}
-    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
-    .read-more{display:inline-block;margin-top:8px;font-weight:600;color:var(--accent);text-decoration:none}
-  </style>
+    <style>
+        :root{
+          --bg: #0b0b0b;
+          --paper: #0f0f0f;
+          --muted: #a8a8a8;
+          --accent: #ffffff;
+          --glass: rgba(255,255,255,0.04);
+          --radius: 12px;
+          --max-width: 1200px;
+          font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+          color-scheme: dark;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+          margin:0;
+          background:linear-gradient(180deg,var(--bg),#050505);
+          color:var(--accent);
+          -webkit-font-smoothing:antialiased;
+          -moz-osx-font-smoothing:grayscale;
+          line-height:1.45;
+          font-size:16px;
+        }
+        .container{
+          width:100%;
+          max-width:var(--max-width);
+          margin:28px auto;
+          padding:0 20px;
+        }
+        header.site-header{
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          gap:16px;
+          margin-bottom:22px;
+        }
+        .brand{
+          display:flex;
+          align-items:center;
+          gap:12px;
+          text-decoration:none;
+          color:var(--accent);
+        }
+        .logo{
+          width:52px;height:52px;border-radius:10px;
+          background:linear-gradient(135deg,#fff,#ddd);
+          display:grid;place-items:center;color:#000;font-weight:700;font-size:18px;
+          box-shadow:0 4px 18px rgba(0,0,0,0.6);
+        }
+        .site-title{font-size:20px;font-weight:700;letter-spacing:0.6px}
+        .site-tag{font-size:12px;color:var(--muted);margin-top:2px}
+        nav.topnav{
+          display:flex;align-items:center;gap:12px;
+        }
+        nav.topnav a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px;border-radius:8px}
+        nav.topnav a:hover{color:var(--accent);background:var(--glass)}
+        .search{
+          display:flex;align-items:center;gap:8px;background:var(--paper);padding:8px;border-radius:10px
+        }
+        .search input{background:transparent;border:0;color:var(--accent);outline:none;width:180px}
+        .grid{
+          display:grid;
+          grid-template-columns: 1fr 330px;
+          gap:24px;
+        }
+        .hero{
+          background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+          border-radius:var(--radius);
+          overflow:hidden;padding:18px;display:flex;flex-direction:column;gap:12px;
+          box-shadow:0 8px 30px rgba(0,0,0,0.6);
+        }
+        .hero .kicker{color:var(--muted);font-size:13px;font-weight:600}
+        .hero h1{margin:0;font-size:28px;line-height:1.05}
+        .hero p.lead{color:var(--muted);margin:6px 0 0}
+        .meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+        .meta .dot{width:6px;height:6px;background:var(--muted);border-radius:50%}
+        .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+        .card{
+          background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+          padding:14px;border-radius:12px;display:flex;
+          gap:12px;align-items:flex-start;
+          text-decoration:none;color:inherit;
+        }
+        .card img{width:120px;height:80px;object-fit:cover;border-radius:8px;flex-shrink:0}
+        .card .card-body{flex:1}
+        .card h3{margin:0 0 6px;font-size:16px}
+        .card p{margin:0;color:var(--muted);font-size:14px}
+        aside.sidebar{position:relative}
+        .widget{background:var(--paper);padding:14px;border-radius:12px;margin-bottom:16px}
+        .widget h4{margin:0 0 12px}
+        .trend-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+        .trend-item:last-child{border-bottom:0}
+        .trend-item small{color:var(--muted)}
+        @media (max-width:980px){
+          .grid{grid-template-columns:1fr}
+          .cards{grid-template-columns:1fr}
+          .search input{width:120px}
+        }
+        @media (prefers-reduced-motion: no-preference){
+          .card, .hero{transition:transform .25s ease, box-shadow .25s ease}
+          .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+        }
+        footer.site-footer{margin-top:28px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:14px;text-align:center}
+        .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
+        .read-more{display:inline-block;margin-top:8px;font-weight:600;color:var(--accent);text-decoration:none}
+    </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
     <header class="site-header">
-      <a class="brand" href="/">
-        <div class="logo">OK</div>
-        <div>
-          <div class="site-title">okurmen news</div>
-          <div class="site-tag">актуально • аналитика • мнение</div>
-        </div>
-      </a>
+        <a class="brand" href="/">
+            <div class="logo">OK</div>
+            <div>
+                <div class="site-title">okurmen news</div>
+                <div class="site-tag">актуально • аналитика • мнение</div>
+            </div>
+        </a>
 
-      <nav class="topnav" aria-label="Главная навигация">
-        <a href="#">Главное</a>
-        <a href="#">Политика</a>
-        <a href="#">Экономика</a>
-        <a href="#">Культура</a>
-        <a href="contacts/">Контакты</a>
+        <nav class="topnav" aria-label="Главная навигация">
+            <a href="#">Главное</a>
+            <a href="#">Политика</a>
+            <a href="#">Экономика</a>
+            <a href="#">Культура</a>
+            <a href="contacts/">Контакты</a>
 
-        <div class="search" role="search" aria-label="Поиск по сайту">
-          <input type="search" placeholder="Поиск" />
-        </div>
-      </nav>
+            <div class="search" role="search" aria-label="Поиск по сайту">
+                <form method="get" action="">
+                    <input
+                            type="search"
+                            name="q"
+                            placeholder="Поиск"
+                            value="{{ query|default:'' }}"
+                    />
+                </form>
+            </div>
+
+        </nav>
     </header>
 
     <main>
-      <div class="grid">
-        <section>
+        <div class="grid">
+            <section>
 
-          {% if news %}
-          {% with hero=news.0 %}
-          <article class="hero">
-            <div class="kicker">Сегодня в новостях</div>
+                {% if news %}
+                {% with hero=news.0 %}
+                <article class="hero">
+                    <div class="kicker">Сегодня в новостях</div>
 
-            <h1>{{ hero.title }}</h1>
+                    <h1>{{ hero.title }}</h1>
 
-            <p class="lead">{{ hero.short_description }}</p>
+                    <p class="lead">{{ hero.short_description }}</p>
 
-            <div class="meta">
-              <span>Автор: <strong>{{ hero.author.full_name|default:"Неизвестно" }}</strong></span>
-              <span class="dot"></span>
-              <time>{{ hero.created_at|date:"d E Y" }}</time>
-              <a class="tag">{{ hero.category.title }}</a>
-            </div>
+                    <div class="meta">
+                        <span>Автор: <strong>{{ hero.author.full_name|default:"Неизвестно" }}</strong></span>
+                        <span class="dot"></span>
+                        <time>{{ hero.created_at|date:"d E Y" }}</time>
+                        <a class="tag">{{ hero.category.title }}</a>
+                    </div>
 
-            <!-- ссылка на детальную новость -->
-            <a class="read-more" href="{% url 'news_detail' hero.id %}">Читать полностью →</a>
-          </article>
-          {% endwith %}
-          {% endif %}
+                    <!-- ссылка на детальную новость -->
+                    <a class="read-more" href="{% url 'news_detail' hero.id %}">Читать полностью →</a>
+                </article>
+                {% endwith %}
+                {% endif %}
 
-          <div class="cards">
-            {% for item in news %}
-            <a href="{% url 'news_detail' item.id %}" class="card">
+                <div class="cards">
+                    {% for item in news %}
+                    <a href="{% url 'news_detail' item.id %}" class="card">
 
-                {% if item.image %}
-                    <img src="{{ item.image.url }}" alt="{{ item.title }}"/>
-                {% else %}
-                    <img src="data:image/svg+xml;utf8,
+                        {% if item.image %}
+                        <img src="{{ item.image.url }}" alt="{{ item.title }}"/>
+                        {% else %}
+                        <img src="data:image/svg+xml;utf8,
                    <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
                      <rect width='100%' height='100%' fill='%23202020'/>
                      <text x='50%' y='50%' dominant-baseline='middle'
                        text-anchor='middle' fill='%23ffffff'
                        font-family='Arial' font-size='18'>Изображение</text>
                    </svg>" alt=""/>
-                {% endif %}
+                        {% endif %}
 
-              <div class="card-body">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.short_description }}</p>
+                        <div class="card-body">
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.short_description }}</p>
 
-                <div class="meta" style="margin-top:8px">
-                  <time>{{ item.created_at|date:"d E Y" }}</time>
-                  • <small>{{ item.author.full_name|default:"Автор неизвестен" }}</small>
+                            <div class="meta" style="margin-top:8px">
+                                <time>{{ item.created_at|date:"d E Y" }}</time>
+                                • <small>{{ item.author.full_name|default:"Автор неизвестен" }}</small>
+                            </div>
+                        </div>
+
+                    </a>
+                    {% endfor %}
                 </div>
-              </div>
 
-            </a>
-            {% endfor %}
-          </div>
+            </section>
 
-        </section>
+            <aside class="sidebar">
+                <div class="widget">
+                    <h4>Тренды</h4>
+                    <div class="trend-item">
+                        <div style="flex:1">
+                            <strong>1. Налоговая реформа</strong>
+                            <div><small>24 ноября 2025 • 6 482 прочтений</small></div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div style="flex:1">
+                            <strong>2. Спортивный финал</strong>
+                            <div><small>25 ноября 2025 • 4 210 прочтений</small></div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div style="flex:1">
+                            <strong>3. Новые правила в образовании</strong>
+                            <div><small>23 ноября 2025 • 3 909 прочтений</small></div>
+                        </div>
+                    </div>
+                </div>
 
-        <aside class="sidebar">
-          <div class="widget">
-            <h4>Тренды</h4>
-            <div class="trend-item">
-              <div style="flex:1">
-                <strong>1. Налоговая реформа</strong>
-                <div><small>24 ноября 2025 • 6 482 прочтений</small></div>
-              </div>
-            </div>
-            <div class="trend-item">
-              <div style="flex:1">
-                <strong>2. Спортивный финал</strong>
-                <div><small>25 ноября 2025 • 4 210 прочтений</small></div>
-              </div>
-            </div>
-            <div class="trend-item">
-              <div style="flex:1">
-                <strong>3. Новые правила в образовании</strong>
-                <div><small>23 ноября 2025 • 3 909 прочтений</small></div>
-              </div>
-            </div>
-          </div>
+                <div class="widget">
+                    <h4>Подписка</h4>
+                    <p style="color:var(--muted)">Получайте подборку главных новостей на почту — 1 письмо в день.</p>
+                    <form onsubmit="event.preventDefault();alert('Спасибо — вы подписаны (демо)');">
+                        <input type="email" placeholder="Email" required
+                               style="width:100%;padding:10px;border-radius:8px;border:0;background:rgba(255,255,255,0.02);color:var(--accent);margin-bottom:8px"/>
+                        <button style="width:100%;padding:10px;border-radius:8px;border:0;background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--accent);font-weight:700;">
+                            Подписаться
+                        </button>
+                    </form>
+                </div>
 
-          <div class="widget">
-            <h4>Подписка</h4>
-            <p style="color:var(--muted)">Получайте подборку главных новостей на почту — 1 письмо в день.</p>
-            <form onsubmit="event.preventDefault();alert('Спасибо — вы подписаны (демо)');">
-              <input type="email" placeholder="Email" required style="width:100%;padding:10px;border-radius:8px;border:0;background:rgba(255,255,255,0.02);color:var(--accent);margin-bottom:8px" />
-              <button style="width:100%;padding:10px;border-radius:8px;border:0;background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--accent);font-weight:700;">Подписаться</button>
-            </form>
-          </div>
+                <div class="widget">
+                    <h4>О нас</h4>
+                    <p style="color:var(--muted);margin:0">
+                        okurmen news — независимый новостной проект.
+                    </p>
+                </div>
+            </aside>
 
-          <div class="widget">
-            <h4>О нас</h4>
-            <p style="color:var(--muted);margin:0">
-              okurmen news — независимый новостной проект.
-            </p>
-          </div>
-        </aside>
+        </div>
 
-      </div>
-
-      <footer class="site-footer">
-        © <strong>okurmen news</strong> — все права защищены.
-        • <a href="#" style="color:var(--muted);text-decoration:none">Политика конфиденциальности</a>
-      </footer>
+        <footer class="site-footer">
+            © <strong>okurmen news</strong> — все права защищены.
+            • <a href="#" style="color:var(--muted);text-decoration:none">Политика конфиденциальности</a>
+        </footer>
 
     </main>
 
-  </div>
+</div>
 </body>
 </html>
